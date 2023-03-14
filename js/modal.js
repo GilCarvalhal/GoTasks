@@ -1,24 +1,7 @@
-const table = document.getElementById("table-body");
 const modal = document.getElementById("modal");
-const form = document.getElementById("form");
 const inputDescription = document.getElementById("description");
 const inputDate = document.getElementById("date");
-const loadingMessage = document.getElementById("loading-message");
-const countTasks = document.getElementById("count-tasks");
 const btnCreateTasks = document.getElementById("btn-create-task");
-
-function loadTasks() {
-  const tasks = JSON.parse(localStorage.getItem("@GoTasks") || []);
-  return tasks;
-}
-
-function updateCountTasks() {
-  const allTasks = loadTasks();
-  countTasks.innerHTML = allTasks.length;
-}
-
-// MODAL =======
-btnCreateTasks.addEventListener("click", createTask);
 
 function createTask(e) {
   e.preventDefault();
@@ -52,3 +35,5 @@ function clearFields() {
   inputDate.value = "";
   inputDescription.value = "";
 }
+
+btnCreateTasks.addEventListener("click", createTask);
