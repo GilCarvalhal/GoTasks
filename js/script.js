@@ -7,6 +7,16 @@ const loadingMessage = document.getElementById("loading-message");
 const countTasks = document.getElementById("count-tasks");
 const btnCreateTasks = document.getElementById("btn-create-task");
 
+function loadTasks() {
+  const tasks = JSON.parse(localStorage.getItem("@GoTasks") || []);
+  return tasks;
+}
+
+function updateCountTasks() {
+  const allTasks = loadTasks();
+  countTasks.innerHTML = allTasks.length;
+}
+
 // MODAL =======
 btnCreateTasks.addEventListener("click", createTask);
 
@@ -20,11 +30,15 @@ function createTask(e) {
 
   const newTask = {
     description: inputDescription.value,
-    date: new Date(inputDate.value).toLocaleDateString(),
+    date: new Date(inputDate.value).toLocaleDateString("pt-BR", {
+      timeZone: "UTC",
+    }),
     id: Math.floor(Math.random() * 10000),
   };
 
-  localStorage.setItem("@GoTasks", JSON.stringify([newTask]));
+  const allTasks = loadTasks();
+
+  localStorage.setItem("@GoTasks", JSON.stringify([...allTasks, newTask]));
 
   toggleModal();
   clearFields();
