@@ -20,6 +20,8 @@
     rel="stylesheet">
   <!-- ICONS -->
   <script src="https://kit.fontawesome.com/909e5f5f85.js" crossorigin="anonymous"></script>
+  <!-- JS -->
+  <script src="./js/script.js" defer></script>
 </head>
 
 <body>
@@ -29,7 +31,7 @@
 
   <main class="container">
     <header class="main-header">
-      <button class="btn-new-task">Nova tarefa</button>
+      <button class="btn-new-task" onclick="openModal()">Nova tarefa</button>
       <span class="total-tasks">
         <span id="count-tasks">0</span> tarefas registradas
       </span>
@@ -65,10 +67,10 @@
         </form>
 
         <div class="button-modal">
-          <button class="btn-cancel" type="button" onclick="">
+          <button class="btn-cancel" type="button" onclick="closeModal()">
             Cancelar
           </button>
-          <button class="btn-save" type="button">
+          <button class="btn-save" type="button" id="btn-create-task">
             Salvar
           </button>
         </div>
