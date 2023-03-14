@@ -31,7 +31,7 @@
 
   <main class="container">
     <header class="main-header">
-      <button class="btn-new-task" onclick="openModal()">Nova tarefa</button>
+      <button class="btn-new-task" onclick="toggleModal()">Nova tarefa</button>
       <span class="total-tasks">
         <span id="count-tasks">0</span> tarefas registradas
       </span>
@@ -67,7 +67,7 @@
         </form>
 
         <div class="button-modal">
-          <button class="btn-cancel" type="button" onclick="closeModal()">
+          <button class="btn-cancel" type="button" onclick="toggleModal()">
             Cancelar
           </button>
           <button class="btn-save" type="button" id="btn-create-task">

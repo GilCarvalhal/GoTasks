@@ -7,16 +7,34 @@ const loadingMessage = document.getElementById("loading-message");
 const countTasks = document.getElementById("count-tasks");
 const btnCreateTasks = document.getElementById("btn-create-task");
 
-function openModal() {
-  modal.style.display = "flex";
-}
+// MODAL =======
+btnCreateTasks.addEventListener("click", createTask);
 
-function closeModal() {
-  modal.style.display = "none";
+function createTask(e) {
+  e.preventDefault();
+
+  if (!inputDescription.value || !inputDate.value) {
+    alert("Preencha todos os campos!");
+    return;
+  }
+
+  const newTask = {
+    description: inputDescription.value,
+    date: new Date(inputDate.value).toLocaleDateString(),
+    id: Math.floor(Math.random() * 10000),
+  };
+
+  localStorage.setItem("@GoTasks", JSON.stringify([newTask]));
+
+  toggleModal();
   clearFields();
 }
 
+function toggleModal() {
+  modal.classList.toggle("modal-visible");
+}
+
 function clearFields() {
-  inputDate.value = '';
-  inputDescription.value = '';
+  inputDate.value = "";
+  inputDescription.value = "";
 }
