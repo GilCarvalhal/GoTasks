@@ -1,7 +1,7 @@
 function getTasks() {
-  return JSON.parse(localStorage.getItem('@GoTasks'));
+  return JSON.parse(localStorage.getItem("@GoTasks")) || [];
 }
 
-function getTasks(tasks) {
-  localStorage.setItem('@GoTasks', JSON.stringify(tasks));
+function setTasks(tasks) {
+  localStorage.setItem("@GoTasks", JSON.stringify(tasks));
 }

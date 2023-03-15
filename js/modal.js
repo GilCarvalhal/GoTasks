@@ -19,7 +19,7 @@ function createTask(e) {
     id: Math.floor(Math.random() * 10000),
   };
 
-  const allTasks = loadTasks();
+  const allTasks = getTasks();
 
   localStorage.setItem("@GoTasks", JSON.stringify([...allTasks, newTask]));
 

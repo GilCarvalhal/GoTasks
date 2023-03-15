@@ -58,24 +58,24 @@
 }
 
 /* BUTTONS ======= */
-.button-modal {
+.buttons-modal {
   align-self: flex-end;
 }
 
-.button-modal .btn-cancel {
+.buttons-modal .btn-cancel {
   background-color: #de3f4e;
   margin-right: 1em;
 }
 
-.button-modal .btn-cancel:hover {
+.buttons-modal .btn-cancel:hover {
   background-color: #ab2936;
 }
 
-.button-modal .btn-save {
+.buttons-modal .btn-save {
   background-color: #2b9061;
 }
 
-.button-modal .btn-save:hover {
+.buttons-modal .btn-save:hover {
   background-color: #186441;
 }
 
